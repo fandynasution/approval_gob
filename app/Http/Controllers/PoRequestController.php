@@ -193,8 +193,7 @@ class PoRequestController extends Controller
             "Pesan" => $msg,
             "St" => $st,
             "notif" => $notif,
-            "image" => $image,
-            "entity_name"   =>  $data["entity_name"]
+            "image" => $image
         );
         return view("email.after", $msg1);
     }
