@@ -258,7 +258,8 @@ class CmProgressController extends Controller
                     "encrypt"   => $encrypt,
                     "name"      => $name,
                     "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt
+                    "valuebt"   => $valuebt,
+                    "entity_name"   => $dataArray["entity_name"]
                 ];
                 Artisan::call('config:cache');
                 Artisan::call('cache:clear');

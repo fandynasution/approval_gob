@@ -253,7 +253,8 @@ class CbPPuNewController extends Controller
                     "encrypt"   => $encrypt,
                     "name"      => $name,
                     "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt
+                    "valuebt"   => $valuebt,
+                    "entity_name"   => $dataArray["entity_name"]
                 );
                 return view('email/cbppunew/passcheckwithremark', $data);
                 Artisan::call('config:cache');

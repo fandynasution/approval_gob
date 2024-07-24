@@ -124,14 +124,15 @@ class MailDataController extends Controller
                 }
                 $dataArray = Crypt::decrypt($encrypt);
                 $data = array(
-                    "status"    => $status,
-                    "doc_no"    => $dataArray["doc_no"],
-                    "email"     => $dataArray["email_address"],
-                    "module"    => $module,
-                    "encrypt"   => $encrypt,
-                    "name"      => $name,
-                    "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt
+                    "status"        => $status,
+                    "doc_no"        => $dataArray["doc_no"],
+                    "email"         => $dataArray["email_address"],
+                    "module"        => $module,
+                    "encrypt"       => $encrypt,
+                    "name"          => $name,
+                    "bgcolor"       => $bgcolor,
+                    "valuebt"       => $valuebt,
+                    "entity_name"   => $dataArray["entity_name"],
                 );
                 return view('email/passcheckwithremark', $data);
                 Artisan::call('config:cache');
