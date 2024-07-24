@@ -197,7 +197,8 @@ class CbPpuController extends Controller
             "Pesan" => $msg,
             "St" => $st,
             "notif" => $notif,
-            "image" => $image
+            "image" => $image,
+            "entity_name"   => $data["entity_name"]
         );
         return view("email.after", $msg1);
         Artisan::call('config:cache');
