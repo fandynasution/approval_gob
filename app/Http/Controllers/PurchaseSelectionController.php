@@ -196,7 +196,8 @@ class PurchaseSelectionController extends Controller
                 "image" => $image,
                 "entity_name"   =>  $data["entity_name"]
             );
-            return view("email.after", $msg1);
+            var_dump($data);
+            // return view("email.after", $msg1);
         } else {
             $where2 = array(
                 'doc_no'        => $data["doc_no"],
