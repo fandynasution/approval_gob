@@ -71,6 +71,7 @@ class CbRumController extends Controller
             'doc_no'        => $data["doc_no"],
             'trx_type'      => $data["trx_type"],
             'level_no'      => $data["level_no"],
+            'entity_name'   => $data['entity_name'],
             'email_address' => $data["email_addr"],
             'usergroup'     => $data["usergroup"],
             'user_id'       => $data["user_id"],

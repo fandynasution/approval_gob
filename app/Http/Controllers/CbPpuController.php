@@ -70,6 +70,7 @@ class CbPpuController extends Controller
             'entity_cd'     => $data["entity_cd"],
             'project_no'    => $data["project_no"],
             'doc_no'        => $data["doc_no"],
+            'entity_name'   => $data["entity_name"],
             'trx_type'      => $data["trx_type"],
             'level_no'      => $data["level_no"],
             'usergroup'     => $data["usergroup"],

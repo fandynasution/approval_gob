@@ -73,6 +73,7 @@ class CbPpuVvipController extends Controller
             'trx_type'      => $data["trx_type"],
             'level_no'      => $data["level_no"],
             'usergroup'     => $data["usergroup"],
+            'entity_name'   => $data['entity_name'],
             'user_id'       => $data["user_id"],
             'supervisor'    => $data["supervisor"],
             'email_address' => $data["email_addr"],

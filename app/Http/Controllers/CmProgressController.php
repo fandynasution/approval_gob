@@ -79,6 +79,7 @@ class CmProgressController extends Controller
             'entity_cd'     => $request->entity_cd,
             'project_no'    => $request->project_no,
             'email_address' => $request->email_addr,
+            'entity_name'       => $request->entity_name,
             'level_no'      => $request->level_no,
             'doc_no'        => $request->doc_no,
             'ref_no'        => $request->ref_no,

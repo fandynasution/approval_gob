@@ -71,6 +71,7 @@ class CbRpbController extends Controller
             'trx_type'      => $data["trx_type"],
             'level_no'      => $data["level_no"],
             'email_address' => $data["email_addr"],
+            'entity_name'   => $data['entity_name'],
             'usergroup'     => $data["usergroup"],
             'user_id'       => $data["user_id"],
             'supervisor'    => $data["supervisor"],

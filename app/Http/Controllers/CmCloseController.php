@@ -26,7 +26,6 @@ class CmCloseController extends Controller
 
         $dataArray = array(
             'sender'            => $request->sender,
-            'entity_name'       => $request->entity_name,
             'descs'             => $request->descs,
             'user_name'         => $request->user_name,
             'entity_name'       => $request->entity_name,
@@ -47,6 +46,7 @@ class CmCloseController extends Controller
             'level_no'      => $request->level_no,
             'doc_no'        => $request->doc_no,
             'ref_no'        => $request->ref_no,
+            'entity_name'   => $request->entity_name,
             'usergroup'     => $request->usergroup,
             'user_id'       => $request->user_id,
             'supervisor'    => $request->supervisor,

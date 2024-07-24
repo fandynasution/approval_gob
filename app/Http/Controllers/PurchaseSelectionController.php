@@ -71,6 +71,7 @@ class PurchaseSelectionController extends Controller
             'project_no'    => $request->project_no,
             'doc_no'        => $request->doc_no,
             'request_no'    => $request->request_no,
+            'entity_name'   => $request->entity_name,
             'trx_date'      => $request->trx_date,
             'level_no'      => $request->level_no,
             'usergroup'     => $request->usergroup,

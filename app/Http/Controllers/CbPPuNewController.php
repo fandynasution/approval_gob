@@ -77,6 +77,7 @@ class CbPPuNewController extends Controller
             'usergroup'     => $request->usergroup,
             'user_id'       => $request->user_id,
             'supervisor'    => $request->supervisor,
+            'entity_name'   => $request->entity_name,
             'email_address' => $request->email_addr,
             'type'          => 'U',
             'type_module'   => 'CB',

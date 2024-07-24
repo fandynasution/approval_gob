@@ -74,6 +74,7 @@ class PoRequestController extends Controller
         $data2Encrypt = array(
             'entity_cd'     => $data["entity_cd"],
             'project_no'    => $data["project_no"],
+            'entity_name'   => $data["entity_name"],
             'email_address' => $data["email_addr"],
             'level_no'      => $data["level_no"],
             'doc_no'        => $data["doc_no"],

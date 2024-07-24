@@ -77,6 +77,7 @@ class CbPPuVvipNewController extends Controller
             'trx_type'      => $request->trx_type,
             'level_no'      => $request->level_no,
             'usergroup'     => $request->usergroup,
+            'entity_name'   => $request->entity_name,
             'user_id'       => $request->user_id,
             'supervisor'    => $request->supervisor,
             'email_address' => $request->email_addr,

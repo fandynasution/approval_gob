@@ -44,6 +44,7 @@ class PlBudgetRevisionController extends Controller
             'entity_cd'     => $data["entity_cd"],
             'project_no'    => $data["project_no"],
             'email_address' => $data["email_addr"],
+            'entity_name'   => $data["entity_name"],
             'level_no'      => $data["level_no"],
             'doc_no'        => $data["doc_no"],
             'trx_type'      => $data["trx_type"],

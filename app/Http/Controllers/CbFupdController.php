@@ -65,6 +65,7 @@ class CbFupdController extends Controller
         $data2Encrypt = array(
             'entity_cd'     => $data["entity_cd"],
             'project_no'    => $data["project_no"],
+            'entity_name'   => $data["entity_name"],
             'doc_no'        => $data["doc_no"],
             'trx_type'      => $data["trx_type"],
             'level_no'      => $data["level_no"],
