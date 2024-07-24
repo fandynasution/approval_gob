@@ -193,7 +193,8 @@ class PurchaseSelectionController extends Controller
                 "Pesan" => $msg,
                 "St" => $st,
                 "notif" => $notif,
-                "image" => $image
+                "image" => $image,
+                "entity_name"   =>  $data["entity_name"]
             );
             return view("email.after", $msg1);
         } else {
@@ -226,7 +227,8 @@ class PurchaseSelectionController extends Controller
                     "Pesan" => $msg,
                     "St" => $st,
                     "notif" => $notif,
-                    "image" => $image
+                    "image" => $image,
+                    "entity_name"   =>  $data["entity_name"]
                 );
                 return view("email.after", $msg1);
             } else {
@@ -252,7 +254,8 @@ class PurchaseSelectionController extends Controller
                     "encrypt"   => $encrypt,
                     "name"      => $name,
                     "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt
+                    "valuebt"   => $valuebt,
+                    "entity_name"   =>  $dataArray["entity_name"]
                 );
                 return view('email/pos/passcheckwithremark2', $data);
                 Artisan::call('config:cache');
@@ -335,7 +338,8 @@ class PurchaseSelectionController extends Controller
             "Pesan" => $msg,
             "St" => $st,
             "notif" => $notif,
-            "image" => $image
+            "image" => $image,
+            "entity_name"   =>  $data["entity_name"]
         );
         return view("email.after", $msg1);
     }
