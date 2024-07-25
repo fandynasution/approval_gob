@@ -16,106 +16,103 @@ use DateTime;
 class PLBudgetLymanController extends Controller
 {
     public function Mail(Request $request)
-    // {
-    //     $amount = number_format( $request->amount , 2 , '.' , ',' );
-
-    //     $list_of_approve = explode('; ',  $request->approve_exist);
-    //     $approve_data = [];
-    //     foreach ($list_of_approve as $approve) {
-    //         $approve_data[] = $approve;
-    //     }
-
-    //     $dataArray = array(
-    //         'descs'         => $request->descs,
-    //         'entity_name'   => $request->entity_name,
-    //         'project_name'  => $request->project_name,
-    //         'amount'        => $amount,
-    //         'doc_no'        => $request->doc_no,
-    //         'user_name'     => $request->user_name,
-    //         'sender'        => $request->sender,
-    //         'module'        => $request->module,
-    //         'approve_list'  => $approve_data,
-    //         'clarify_user'  => $request->clarify_user,
-    //         'clarify_email' => $request->clarify_email,
-    //         'sender_addr'   => $request->sender_addr,
-    //         'body'          => "Please approve RAB Budget No. ".$request->doc_no." project ".$request->project_name. " with Amount ".$amount,
-    //         'subject'       => "Need Approval for RAB Budget No. ".$request->doc_no,
-    //     );
-
-    //     $data2Encrypt = array(
-    //         'entity_cd'     => $request->entity_cd,
-    //         'project_no'    => $request->project_no,
-    //         'email_address' => $request->email_addr,
-    //         'entity_name'   => $request->entity_name,
-    //         'level_no'      => $request->level_no,
-    //         'doc_no'        => $request->doc_no,
-    //         'user_id'       => $request->user_id,
-    //         'type'          => 'B',
-    //         'type_module'   => 'PL',
-    //         'text'          => 'Budget Lyman'
-    //     );  
-
-    //     // Melakukan enkripsi pada $dataArray
-    //     $encryptedData = Crypt::encrypt($data2Encrypt);
-    
-    //     try {
-    //         $emailAddresses = strtolower($request->email_addr);
-    //         $approve_seq = $request->approve_seq;
-    //         $entity_cd = $request->entity_cd;
-    //         $doc_no = $request->doc_no;
-    //         $status = $request->status;
-    //         $level_no = $request->level_no;
-        
-    //         // Check if email addresses are provided and not empty
-    //         if (!empty($emailAddresses)) {
-    //             $email = $emailAddresses; // Since $emailAddresses is always a single email address (string)
-                
-    //             // Check if the email has been sent before for this document
-    //             $cacheFile = 'email_sent_' . $approve_seq . '_' . $entity_cd . '_' . $doc_no . '_' . $status . '_' . $level_no . '.txt';
-    //             $cacheFilePath = storage_path('app/mail_cache/send_pl_budget_lyman/' . date('Ymd') . '/' . $cacheFile);
-    //             $cacheDirectory = dirname($cacheFilePath);
-        
-    //             // Ensure the directory exists
-    //             if (!file_exists($cacheDirectory)) {
-    //                 mkdir($cacheDirectory, 0755, true);
-    //             }
-
-    //             // Acquire an exclusive lock
-    //             $lockFile = $cacheFilePath . '.lock';
-    //             $lockHandle = fopen($lockFile, 'w');
-    //             if (!flock($lockHandle, LOCK_EX)) {
-    //                 // Failed to acquire lock, handle appropriately
-    //                 fclose($lockHandle);
-    //                 throw new Exception('Failed to acquire lock');
-    //             }
-        
-    //             if (!file_exists($cacheFilePath)) {
-    //                 // Send email
-    //                 Mail::to($email)->send(new SendPLLymanMail($encryptedData, $dataArray));
-        
-    //                 // Mark email as sent
-    //                 file_put_contents($cacheFilePath, 'sent');
-        
-    //                 // Log the success
-    //                 Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' berhasil dikirim ke: ' . $email);
-    //                 return 'Email berhasil dikirim ke: ' . $email;
-    //             } else {
-    //                 // Email was already sent
-    //                 Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' already sent to: ' . $email);
-    //                 return 'Email has already been sent to: ' . $email;
-    //             }
-    //         } else {
-    //             Log::channel('sendmail')->warning("Tidak ada alamat email yang diberikan");
-    //             Log::channel('sendmail')->info($doc_no);
-    //             return "Tidak ada alamat email yang diberikan";
-    //         }
-    //     } catch (\Exception $e) {
-    //         Log::channel('sendmail')->error('Gagal mengirim email: ' . $e->getMessage());
-    //         return "Gagal mengirim email: " . $e->getMessage();
-    //     }
-    // }
     {
-        dd($request);
+        $amount = number_format( $request->amount , 2 , '.' , ',' );
+
+        $list_of_approve = explode('; ',  $request->approve_exist);
+        $approve_data = [];
+        foreach ($list_of_approve as $approve) {
+            $approve_data[] = $approve;
+        }
+
+        $dataArray = array(
+            'descs'         => $request->descs,
+            'entity_name'   => $request->entity_name,
+            'project_name'  => $request->project_name,
+            'amount'        => $amount,
+            'doc_no'        => $request->doc_no,
+            'user_name'     => $request->user_name,
+            'sender'        => $request->sender,
+            'module'        => $request->module,
+            'approve_list'  => $approve_data,
+            'clarify_user'  => $request->clarify_user,
+            'clarify_email' => $request->clarify_email,
+            'sender_addr'   => $request->sender_addr,
+            'body'          => "Please approve RAB Budget No. ".$request->doc_no." project ".$request->project_name. " with Amount ".$amount,
+            'subject'       => "Need Approval for RAB Budget No. ".$request->doc_no,
+        );
+
+        $data2Encrypt = array(
+            'entity_cd'     => $request->entity_cd,
+            'project_no'    => $request->project_no,
+            'email_address' => $request->email_addr,
+            'entity_name'   => $request->entity_name,
+            'level_no'      => $request->level_no,
+            'doc_no'        => $request->doc_no,
+            'user_id'       => $request->user_id,
+            'type'          => 'Y',
+            'type_module'   => 'PL',
+            'text'          => 'Budget Lyman'
+        );  
+
+        // Melakukan enkripsi pada $dataArray
+        $encryptedData = Crypt::encrypt($data2Encrypt);
+    
+        try {
+            $emailAddresses = strtolower($request->email_addr);
+            $approve_seq = $request->approve_seq;
+            $entity_cd = $request->entity_cd;
+            $doc_no = $request->doc_no;
+            $status = $request->status;
+            $level_no = $request->level_no;
+        
+            // Check if email addresses are provided and not empty
+            if (!empty($emailAddresses)) {
+                $email = $emailAddresses; // Since $emailAddresses is always a single email address (string)
+                
+                // Check if the email has been sent before for this document
+                $cacheFile = 'email_sent_' . $approve_seq . '_' . $entity_cd . '_' . $doc_no . '_' . $status . '_' . $level_no . '.txt';
+                $cacheFilePath = storage_path('app/mail_cache/send_pl_budget_lyman/' . date('Ymd') . '/' . $cacheFile);
+                $cacheDirectory = dirname($cacheFilePath);
+        
+                // Ensure the directory exists
+                if (!file_exists($cacheDirectory)) {
+                    mkdir($cacheDirectory, 0755, true);
+                }
+
+                // Acquire an exclusive lock
+                $lockFile = $cacheFilePath . '.lock';
+                $lockHandle = fopen($lockFile, 'w');
+                if (!flock($lockHandle, LOCK_EX)) {
+                    // Failed to acquire lock, handle appropriately
+                    fclose($lockHandle);
+                    throw new Exception('Failed to acquire lock');
+                }
+        
+                if (!file_exists($cacheFilePath)) {
+                    // Send email
+                    Mail::to($email)->send(new SendPLLymanMail($encryptedData, $dataArray));
+        
+                    // Mark email as sent
+                    file_put_contents($cacheFilePath, 'sent');
+        
+                    // Log the success
+                    Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' berhasil dikirim ke: ' . $email);
+                    return 'Email berhasil dikirim ke: ' . $email;
+                } else {
+                    // Email was already sent
+                    Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' already sent to: ' . $email);
+                    return 'Email has already been sent to: ' . $email;
+                }
+            } else {
+                Log::channel('sendmail')->warning("Tidak ada alamat email yang diberikan");
+                Log::channel('sendmail')->info($doc_no);
+                return "Tidak ada alamat email yang diberikan";
+            }
+        } catch (\Exception $e) {
+            Log::channel('sendmail')->error('Gagal mengirim email: ' . $e->getMessage());
+            return "Gagal mengirim email: " . $e->getMessage();
+        }
     }
 
     public function processData($status='', $encrypt='')
