@@ -132,7 +132,7 @@ class MailDataController extends Controller
                     "name"          => $name,
                     "bgcolor"       => $bgcolor,
                     "valuebt"       => $valuebt,
-                    "entity_name"   => $dataArray["entity_name"],
+                    "entity_name"   => $dataArray["entity_name"]
                 );
                 return view('email/passcheckwithremark', $data);
                 Artisan::call('config:cache');

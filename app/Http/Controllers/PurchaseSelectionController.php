@@ -255,7 +255,8 @@ class PurchaseSelectionController extends Controller
                     "encrypt"   => $encrypt,
                     "name"      => $name,
                     "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt
+                    "valuebt"   => $valuebt,
+                    "entity_name"   => $dataArray["entity_name"]
                 );
                 return view('email/pos/passcheckwithremark2', $data);
                 Artisan::call('config:cache');
