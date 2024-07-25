@@ -44,6 +44,7 @@ class MailDataController extends Controller
         $notif = " ";
         $st = " ";
         $image = " ";
+        dd($data);
 
         Log::info('Decrypted data: ' . json_encode($data));
 
