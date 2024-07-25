@@ -103,3 +103,7 @@ Route::POST('/budgetrevision', [PLBudgetRevision::class, 'Mail']);
 Route::GET('/budgetrevision/{status}/{encrypt}', [PLBudgetRevision::class, 'processData']);
 Route::POST('/budgetrevision/getaccess', [PLBudgetRevision::class, 'update']);
 
+use App\Http\Controllers\FeedbackPLController as FeedbackPL;
+Route::POST('/feedbackbudgetlyman', [FeedbackPL::class, 'feedbackbudgetlyman']);
+Route::POST('/feedbackbudgetrevision', [FeedbackPL::class, 'feedbackbudgetrevision']);
+
