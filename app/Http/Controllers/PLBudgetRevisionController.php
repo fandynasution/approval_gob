@@ -228,7 +228,7 @@ class PLBudgetRevisionController extends Controller
                     "valuebt"   => $valuebt,
                     "entity_name"   => $dataArray["entity_name"]
                 );
-                return view('email/budgetrevision/passcheckwithremark', $data);
+                return view('email/plrevision/passcheckwithremark', $data);
                 Artisan::call('config:cache');
                 Artisan::call('cache:clear');
             }
