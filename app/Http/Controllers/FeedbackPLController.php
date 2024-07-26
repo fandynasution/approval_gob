@@ -26,12 +26,12 @@ class FeedbackPLController extends Controller
         if (strcasecmp($request->status, 'R') == 0) {
 
             $action = 'Revision';
-            $bodyEMail = 'Please revise '.$request->descs.' No. '.$request->doc_no.' with the reason : '.$request->reason;
+            $bodyEMail = 'Please revise '.$request->descs.' No. '.$request->doc_no;
 
         } else if (strcasecmp($request->status, 'C') == 0){
             
             $action = 'Cancellation';
-            $bodyEMail = $request->descs.' No. '.$request->doc_no.' has been cancelled with the reason : '.$request->reason;
+            $bodyEMail = $request->descs.' No. '.$request->doc_no;
 
         } else if (strcasecmp($request->status, 'A') == 0) {
             $action = 'Approval';
@@ -109,12 +109,12 @@ class FeedbackPLController extends Controller
         if (strcasecmp($request->status, 'R') == 0) {
 
             $action = 'Revision';
-            $bodyEMail = 'Please revise '.$request->descs.' No. '.$request->doc_no.' with the reason : '.$request->reason;
+            $bodyEMail = 'Please revise '.$request->descs.' No. '.$request->doc_no;
 
         } else if (strcasecmp($request->status, 'C') == 0){
             
             $action = 'Cancellation';
-            $bodyEMail = $request->descs.' No. '.$request->doc_no.' has been cancelled with the reason : '.$request->reason;
+            $bodyEMail = $request->descs.' No. '.$request->doc_no;
 
         } else if (strcasecmp($request->status, 'A') == 0) {
             $action = 'Approval';
