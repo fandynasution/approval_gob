@@ -25,6 +25,20 @@ class PLBudgetRevisionController extends Controller
             $approve_data[] = $approve;
         }
 
+        $list_of_urls = explode('; ', $request->url_file);
+        $list_of_files = explode('; ', $request->file_name);
+
+        $url_data = [];
+        $file_data = [];
+
+        foreach ($list_of_urls as $url) {
+            $url_data[] = $url;
+        }
+
+        foreach ($list_of_files as $file) {
+            $file_data[] = $file;
+        }
+
         $dataArray = array(
             'descs'         => $request->descs,
             'entity_name'   => $request->entity_name,
@@ -35,6 +49,8 @@ class PLBudgetRevisionController extends Controller
             'user_name'     => $request->user_name,
             'sender'        => $request->sender,
             'module'        => $request->module,
+            'url_file'      => $url_data,
+            'file_name'     => $file_data,
             'approve_list'  => $approve_data,
             'clarify_user'  => $request->clarify_user,
             'clarify_email' => $request->clarify_email,
