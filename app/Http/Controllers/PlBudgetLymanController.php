@@ -50,7 +50,7 @@ class PLBudgetLymanController extends Controller
             'module'        => $request->module,
             'url_file'      => $url_data,
             'file_name'     => $file_data,
-            'approve_list'  => $approve_data,
+            'approve_list'  => $approve_data
             'clarify_user'  => $request->clarify_user,
             'clarify_email' => $request->clarify_email,
             'sender_addr'   => $request->sender_addr,
