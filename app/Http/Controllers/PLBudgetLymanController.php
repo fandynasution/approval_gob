@@ -113,11 +113,11 @@ class PLBudgetLymanController extends Controller
                     file_put_contents($cacheFilePath, 'sent');
         
                     // Log the success
-                    Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' berhasil dikirim ke: ' . $email);
+                    Log::channel('sendmailapproval')->info('Email RAB Budget doc_no '.$doc_no.' Entity ' . $entity_cd.' berhasil dikirim ke: ' . $email);
                     return 'Email berhasil dikirim ke: ' . $email;
                 } else {
                     // Email was already sent
-                    Log::channel('sendmailapproval')->info('Email PL Budget Lyman doc_no '.$doc_no.' Entity ' . $entity_cd.' already sent to: ' . $email);
+                    Log::channel('sendmailapproval')->info('Email RAB Budget doc_no '.$doc_no.' Entity ' . $entity_cd.' already sent to: ' . $email);
                     return 'Email has already been sent to: ' . $email;
                 }
             } else {
@@ -172,7 +172,7 @@ class PLBudgetLymanController extends Controller
         Log::info('First query result: ' . json_encode($query));
 
         if (count($query)>0) {
-            $msg = 'You Have Already Made a Request to PL Budget Lyman No. '.$data["doc_no"] ;
+            $msg = 'You Have Already Made a Request to RAB Budget No. '.$data["doc_no"] ;
             $notif = 'Restricted !';
             $st  = 'OK';
             $image = "double_approve.png";
@@ -202,7 +202,7 @@ class PLBudgetLymanController extends Controller
             Log::info('Second query result: ' . json_encode($query2));
 
             if (count($query2) == 0) {
-                $msg = 'There is no PL Budget Lyman with No. '.$data["doc_no"] ;
+                $msg = 'There is no RAB Budget with No. '.$data["doc_no"] ;
                 $notif = 'Restricted !';
                 $st  = 'OK';
                 $image = "double_approve.png";
@@ -290,12 +290,12 @@ class PLBudgetLymanController extends Controller
         $sth->bindParam(6, $data["user_id"]);
         $sth->execute();
         if ($sth == true) {
-            $msg = "You Have Successfully ".$descstatus." the PL Budget Lyman No. ".$data["doc_no"];
+            $msg = "You Have Successfully ".$descstatus." the RAB Budget No. ".$data["doc_no"];
             $notif = $descstatus." !";
             $st = 'OK';
             $image = $imagestatus;
         } else {
-            $msg = "You Failed to ".$descstatus." the PL Budget Lyman No.".$data["doc_no"];
+            $msg = "You Failed to ".$descstatus." the RAB Budget No.".$data["doc_no"];
             $notif = 'Fail to '.$descstatus.' !';
             $st = 'OK';
             $image = "reject.png";
