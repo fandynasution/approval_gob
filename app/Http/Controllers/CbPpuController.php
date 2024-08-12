@@ -202,6 +202,6 @@ class CbPpuController extends Controller
         );
         return view("email.after", $msg1);
         Artisan::call('config:cache');
-Artisan::call('cache:clear');
+        Artisan::call('cache:clear');
     }
 }

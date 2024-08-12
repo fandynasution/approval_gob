@@ -50,6 +50,7 @@ class VarianOrderController extends Controller
             'approve_seq'       => $request->approve_seq,
             'url_file'          => $url_data,
             'file_name'         => $file_data,
+            'doc_link'          => $request->doc_link,
             'vo_sub_amt'        => $vo_sub_amt,
             'vo_appr_amt'       => $vo_appr_amt,
             'curr_cd'           => $request->curr_cd,
@@ -66,7 +67,6 @@ class VarianOrderController extends Controller
             'entity_cd'     => $request->entity_cd,
             'project_no'    => $request->project_no,
             'email_address' => $request->email_addr,
-            'entity_name'   => $request->entity_name,
             'level_no'      => $request->level_no,
             'doc_no'        => $request->doc_no,
             'ref_no'        => $request->ref_no,
@@ -189,8 +189,7 @@ class VarianOrderController extends Controller
                 "Pesan" => $msg,
                 "St" => $st,
                 "notif" => $notif,
-                "image" => $image,
-                "entity_name"   => $data["entity_name"]
+                "image" => $image
             );
             return view("email.after", $msg1);
         } else {
@@ -219,8 +218,7 @@ class VarianOrderController extends Controller
                     "Pesan" => $msg,
                     "St" => $st,
                     "notif" => $notif,
-                    "image" => $image,
-                    "entity_name"   => $data["entity_name"]
+                    "image" => $image
                 );
                 return view("email.after", $msg1);
             } else {
@@ -246,8 +244,7 @@ class VarianOrderController extends Controller
                     "encrypt"   => $encrypt,
                     "name"      => $name,
                     "bgcolor"   => $bgcolor,
-                    "valuebt"   => $valuebt,
-                    "entity_name"   => $dataArray["entity_name"]
+                    "valuebt"   => $valuebt
                 );
                 return view('email/varianorder/passcheckwithremark', $data);
                 Artisan::call('config:cache');
@@ -317,8 +314,7 @@ class VarianOrderController extends Controller
             "Pesan" => $msg,
             "St" => $st,
             "notif" => $notif,
-            "image" => $image,
-            "entity_name"   => $data["entity_name"]
+            "image" => $image
         );
         return view("email.after", $msg1);
     }
